@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/styles.dart';
+import 'custom_rating.dart';
 class Items extends StatelessWidget {
   const Items({super.key});
 
@@ -45,16 +46,14 @@ class Items extends StatelessWidget {
                 const SizedBox(height: 3,),
                 const Text("KJ Rowing",style: Styles.textStyle14,),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text("19.99",style:Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),),
+                    Text(
+                      "19.99",
+                      style: Styles.textStyle16.copyWith(fontWeight: FontWeight.bold),
+                    ),
                     const Spacer(),
-                    const Row(
-                      children: [
-                        Icon(Icons.star,color: Colors.yellow,),
-                        Text("4.8")
-
-                      ],
-                    )
+                    const CustomRating()
                   ],
                 )
               ],
