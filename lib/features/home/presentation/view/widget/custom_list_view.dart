@@ -6,7 +6,7 @@ class CustomListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.8/4,
+      aspectRatio: 2.7/4,
       child: Container(
         width: 100,
         height: 200,
