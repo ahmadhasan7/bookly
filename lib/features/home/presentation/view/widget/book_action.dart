@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'custom_button.dart';
+
 class BookAction extends StatelessWidget {
   const BookAction({super.key});
 
@@ -20,14 +21,14 @@ class BookAction extends StatelessWidget {
         Expanded(
           child: CustomButton(
             text: 'Free Perview',
-            backgroundColor:const Color(0xffEF8262),
+            backgroundColor: const Color(0xffEF8262),
             textColor: Colors.white,
             borderRadius: const BorderRadius.only(
-                topRight:  Radius.circular(12), bottomRight: Radius.circular(12)),
+                topRight: Radius.circular(12),
+                bottomRight: Radius.circular(12)),
           ),
         ),
       ],
     );
   }
 }
-

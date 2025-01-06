@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/styles.dart';
+
 class CustomButton extends StatelessWidget {
   final String text;
   final Color backgroundColor;
@@ -9,10 +10,10 @@ class CustomButton extends StatelessWidget {
 
   CustomButton(
       {super.key,
-        required this.text,
-        required this.backgroundColor,
-        required this.textColor,
-        this.borderRadius});
+      required this.text,
+      required this.backgroundColor,
+      required this.textColor,
+      this.borderRadius});
 
   @override
   Widget build(BuildContext context) {

@@ -1,25 +1,22 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomListView extends StatelessWidget {
-  const CustomListView({super.key});
+  final String imageUrl;
+
+  const CustomListView({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.7/4,
-      child: Container(
-        width: 100,
-        height: 200,
-        decoration:  BoxDecoration(
-            image:const DecorationImage(
-                image: AssetImage(
-                  "assets/images/test_image.png",
-                ),
-                fit: BoxFit.fill),
-            borderRadius:BorderRadius.circular(10),
-            color: Colors.red
-        ),
-      ),
-    );
+        aspectRatio: 2.7 / 4,
+        child: ClipRRect(
+          child: CachedNetworkImage(
+            fit: BoxFit.fill,
+            imageUrl: imageUrl,
+            placeholder: (context, url) => const Center(child:  CircularProgressIndicator()),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
+        ));
   }
 }

@@ -14,38 +14,36 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
         body: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child:    Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomAppBar(),
-                    CustomBookListView(),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 5),
-                      child: Text(
-                        "Best Seller",
-                        style: Styles.textStyle18,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                  ],
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomAppBar(),
+                CustomBookListView(),
+                SizedBox(
+                  height: 50,
                 ),
-              ),
+                Padding(
+                  padding: EdgeInsets.only(left: 5),
+                  child: Text(
+                    "Best Seller",
+                    style: Styles.textStyle18,
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+              ],
             ),
-            SliverFillRemaining(
-              child: ItemsListView(),
-            )
-          ],
+          ),
+        ),
+        SliverFillRemaining(
+          child: ItemsListView(),
         )
-     );
+      ],
+    ));
   }
 }
-
