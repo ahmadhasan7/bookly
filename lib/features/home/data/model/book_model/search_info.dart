@@ -1,15 +1,17 @@
-class SearchInfo {
-  String? textSnippet;
 
-  SearchInfo({this.textSnippet});
+class SearchInfo  {
+  final String? textSnippet;
 
-  SearchInfo.fromJson(Map<String, dynamic> json) {
-    textSnippet = json['textSnippet'];
-  }
+  const SearchInfo({this.textSnippet});
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['textSnippet'] = this.textSnippet;
-    return data;
-  }
+  factory SearchInfo.fromJson(Map<String, dynamic> json) => SearchInfo(
+        textSnippet: json['textSnippet'] as String?,
+      );
+
+  Map<String, dynamic> toJson() => {
+        'textSnippet': textSnippet,
+      };
+
+  @override
+  List<Object?> get props => [textSnippet];
 }

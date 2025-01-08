@@ -11,6 +11,7 @@ class CustomListView extends StatelessWidget {
     return AspectRatio(
         aspectRatio: 2.7 / 4,
         child: ClipRRect(
+          borderRadius:BorderRadius.circular(20),
           child: CachedNetworkImage(
             fit: BoxFit.fill,
             imageUrl: imageUrl,

@@ -1,14 +1,16 @@
 import 'package:dio/dio.dart';
 
+
 abstract class Failure {
   final String errMassege;
+
   Failure(this.errMassege);
 }
 
 class ServerFailure extends Failure {
   ServerFailure(super.errMassege);
 
-  factory ServerFailure.fromDioError(DioException dioError) {
+  factory ServerFailure.fromDioError  (DioException dioError)  {
     switch (dioError.type) {
       case DioExceptionType.connectionTimeout:
         return ServerFailure('Connection TimeOut With ApiServer');
@@ -36,14 +38,16 @@ class ServerFailure extends Failure {
   }
 
   factory ServerFailure.fromResponse(int statusCode, dynamic body) {
-    print ('The StatusCode Is $statusCode');
     if (statusCode == 401 || statusCode == 403 || statusCode == 400) {
       return ServerFailure(body['error']['Message']);
     } else if (statusCode == 500) {
-      return ServerFailure("Internal Server Error, Please Try Again");
+      return ServerFailure(
+          "Internal Server Error, Please Try Again, The status code is $statusCode");
     } else if (statusCode == 404) {
-      return ServerFailure("Your Request not found, please try later");
+      return ServerFailure(
+          "Your Request not found, Please try later, The status code is $statusCode");
     }
-    return ServerFailure("UnKnow Error Was Happened,Please Try Again");
+    return ServerFailure(
+        "UnKnow Error Was Happened,Please Try Again, The status code is $statusCode");
   }
 }

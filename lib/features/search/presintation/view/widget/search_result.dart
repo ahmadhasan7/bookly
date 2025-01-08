@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/constants/routers.dart';
-import '../../../../home/presentation/view/widget/items.dart';
 
 class SearchResult extends StatelessWidget {
   const SearchResult({super.key});
@@ -16,7 +15,7 @@ class SearchResult extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(onTap: (){
             context.go(Routers.bookDetails);
-          },child: const  Items());
+          },child: Text("ghjk")  );
         });
   }
 }
